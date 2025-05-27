@@ -64,8 +64,9 @@ El proyecto implementa los siguientes diseños:
 ```
 - HTML5
 - CSS3
-- JavaScript (ES6+)
-- [Framework/Librería utilizada - ej: React, Angular, Vue]
+- Typescript
+- JavaScript
+- [Framework/Librería utilizada Angular]
 - [Otras dependencias específicas]
 ```
 
