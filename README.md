@@ -71,26 +71,29 @@ El proyecto implementa los siguientes diseños:
 
 ## 📦 Instalación
 
-1. Clona el repositorio:
-```bash
-git clone [URL_DEL_REPOSITORIO]
-cd frontend-banco-pichincha
-```
-
-2. Instala las dependencias:
+1. Instala las dependencias:
 ```bash
 npm install
 ```
 
-3. Configura las variables de entorno:
-```bash
-cp .env.example .env
-# Edita .env con la configuración de tu API
-```
-
-4. Ejecuta el proyecto:
+2. Configura las variables de entorno:
 ```bash
 npm start
+```
+
+3. Ejecutar api:
+```bash
+cd api
+```
+
+4. Ejecutar api:
+```bash
+cd api
+```
+
+5. levantar api:
+```bash
+json-server --watch db.json --port 3012
 ```
 
 ## 🔧 Configuración
@@ -100,21 +103,6 @@ Asegúrate de configurar correctamente:
 - **API_BASE_URL**: URL base de la API de productos financieros
 - **API_ENDPOINTS**: Endpoints específicos para cada operación
 
-## 📚 Estructura del Proyecto
-
-```
-src/
-├── components/
-│   ├── ProductList/
-│   ├── ProductForm/
-│   ├── SearchBar/
-│   └── Modal/
-├── services/
-│   └── api.js
-├── styles/
-├── utils/
-└── App.js
-```
 
 ## 🧪 Validaciones Implementadas
 
@@ -129,52 +117,4 @@ src/
 | Fecha Liberación | Requerida, >= fecha actual |
 | Fecha Revisión | Requerida, = fecha liberación + 1 año |
 
-## 🔍 API Endpoints
 
-- `GET /products` - Obtener lista de productos
-- `POST /products` - Crear nuevo producto
-- `PUT /products/:id` - Actualizar producto
-- `DELETE /products/:id` - Eliminar producto
-- `GET /products/verification/:id` - Verificar ID único
-
-## 🚀 Deployment
-
-### Desarrollo
-```bash
-npm run dev
-```
-
-### Producción
-```bash
-npm run build
-npm run start
-```
-
-## 🤝 Contribución
-
-1. Fork el proyecto
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
-
-## 📄 Licencia
-
-Este proyecto está bajo la Licencia [NOMBRE_LICENCIA]. Ver el archivo `LICENSE` para más detalles.
-
-## 👨‍💻 Autor
-
-**[Tu Nombre]**
-- Email: [tu-email@ejemplo.com]
-- LinkedIn: [tu-perfil-linkedin]
-- GitHub: [tu-usuario-github]
-
-## 📞 Soporte
-
-Para soporte o preguntas sobre el proyecto:
-- Crea un issue en GitHub
-- Contacta al equipo de desarrollo
-
----
-
-⭐ **¡No olvides dar una estrella al proyecto si te fue útil!**
