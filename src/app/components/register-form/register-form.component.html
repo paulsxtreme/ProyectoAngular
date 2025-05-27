@@ -1,0 +1,71 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="register-form">
+    <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
+    <div *ngIf="errorMessage" class="error-message-global">{{ errorMessage }}</div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="id">ID</label>
+        <input id="id" formControlName="id" [ngClass]="{'ng-invalid': isInvalid('id')}" />
+        <div class="error-message" *ngIf="isInvalid('id')">
+          <span *ngIf="form.get('id')?.errors?.['required']">ID es requerido</span>
+          <span *ngIf="form.get('id')?.errors?.['minlength']">Mínimo 3 caracteres</span>
+          <span *ngIf="form.get('id')?.errors?.['maxlength']">Máximo 10 caracteres</span>
+          <span *ngIf="form.get('id')?.errors?.['notUnique']">ID ya existe</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="name">Nombre</label>
+        <input id="name" formControlName="name" [ngClass]="{'ng-invalid': isInvalid('name')}" />
+        <div class="error-message" *ngIf="isInvalid('name')">
+          <span *ngIf="form.get('name')?.errors?.['required']">Nombre es requerido</span>
+          <span *ngIf="form.get('name')?.errors?.['minlength']">Mínimo 3 caracteres</span>
+          <span *ngIf="form.get('name')?.errors?.['maxlength']">Máximo 10 caracteres</span>
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="description">Descripción</label>
+        <input id="description" formControlName="description" [ngClass]="{'ng-invalid': isInvalid('description')}" />
+        <div class="error-message" *ngIf="isInvalid('description')">
+          <span *ngIf="form.get('description')?.errors?.['required']">Descripción es requerida</span>
+          <span *ngIf="form.get('description')?.errors?.['minlength']">Mínimo 5 caracteres</span>
+          <span *ngIf="form.get('description')?.errors?.['maxlength']">Máximo 100 caracteres</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="logo">Logo</label>
+        <input id="logo" type="file" accept="image/*" (change)="onLogoChange($event)" [ngClass]="{'ng-invalid': isInvalid('logo')}" />
+        <div *ngIf="logoPreview" class="logo-preview">
+          <img [src]="logoPreview" alt="Previsualización del logo" />
+        </div>
+        <div class="error-message" *ngIf="isInvalid('logo')">
+          <span *ngIf="form.get('logo')?.errors?.['required']">Logo es requerido</span>
+          <span *ngIf="form.get('logo')?.errors?.['minlength']">Mínimo 10 caracteres</span>
+          <span *ngIf="form.get('logo')?.errors?.['maxlength']">Máximo 200 caracteres</span>
+          <span *ngIf="form.get('logo')?.errors?.['invalidFileType']">Solo se permiten URL imágenes</span>
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="releaseDate">Fecha de Liberación</label>
+        <input id="releaseDate" type="date" formControlName="releaseDate" [ngClass]="{'ng-invalid': isInvalid('releaseDate')}" />
+        <div class="error-message" *ngIf="isInvalid('releaseDate')">
+          <span *ngIf="form.get('releaseDate')?.errors?.['required']">Fecha requerida</span>
+          <span *ngIf="form.get('releaseDate')?.errors?.['invalidDate']">Debe ser igual o mayor a hoy</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="reviewDate">Fecha de Revisión</label>
+        <input id="reviewDate" type="date" formControlName="reviewDate" [disabled]="!form.get('releaseDate')?.value" [ngClass]="{'ng-invalid': isInvalid('reviewDate')}" />
+        <div class="error-message" *ngIf="isInvalid('reviewDate')">
+          <span *ngIf="form.get('reviewDate')?.errors?.['required']">Fecha requerida</span>
+          <span *ngIf="form.get('reviewDate')?.errors?.['invalidReviewDate']">Debe ser exactamente un año después de la liberación</span>
+        </div>
+      </div>
+    </div>
+    <div class="form-actions">
+      <button type="submit" [disabled]="form.invalid">Agregar</button>
+      <button type="button" (click)="onReset()">Reiniciar</button>
+    </div>
+  </form>

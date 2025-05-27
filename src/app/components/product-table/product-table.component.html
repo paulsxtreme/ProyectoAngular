@@ -1,0 +1,92 @@
+<div class="outer-container">
+    <div class="segundoContenedor">
+       
+        <div class="search-bar">
+            <input
+                type="text"
+                placeholder="Buscar registro"
+                [(ngModel)]="searchText"
+                (ngModelChange)="onSearchTextChange()"
+            />
+        </div>
+        <div class="agregarclass">
+            <button class="botonAgregar" (click)="irAAgregar()">Agregar <i class="fa fa-plus"></i></button>
+       
+    </div>
+    </div>
+  
+    <div class="tablaContenedor">
+        <div class="table-responsive">
+            <table>                
+                <thead>
+                    <tr>
+                    <th>Logo</th>
+                    <th>Nombre</th>
+                    <th class="adaptable">Descripción <i class="fa fa-exclamation-circle"></i></th>
+                    <th>Fecha Liberación <i class="fa fa-exclamation-circle"></i></th>
+                    <th>Fecha Revisión <i class="fa fa-exclamation-circle"></i></th>
+                    <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of productosFiltrados">
+                        <td>
+                            <img
+                            [src]="product.logo"
+                            alt="{{ product.nombre }} logo"
+                            width="32"
+                            height="32"
+                            />
+                        </td>
+                        
+                        <td>{{ product.nombre }}</td>
+                        
+                        <td>{{ product.description }}</td>
+                        <td>{{ product.fechaLib | date: 'yyyy-MM-dd' }}</td>
+                        <td>{{ product.fechaRev | date: 'yyyy-MM-dd' }}</td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="dropdown-toggle">⋮</button>
+                                <div class="dropdown-menu">        
+
+                                    <button class="botonEditar" (click)="edit(product.id)" style="color: black;">Editar</button>
+                                    <button class="botonEliminar" (click)="confirmarEliminacion(product)">Eliminar</button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                  </tbody>                
+            </table>
+        </div>
+    
+        <div class="page-size">
+            <label for="pageSize"></label>
+            <select [(ngModel)]="pageSize" (ngModelChange)="onPageSizeChange()">
+                <option [value]="5">5</option>
+                <option [value]="10">10</option>
+                <option [value]="15">15</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+
+  
+  <!-- ventana emergente-->
+    <div class="modal-backdrop" *ngIf="mostrarModal">
+        <div class="modal">
+        <h1>¡Estás seguro de que deseas eliminar el registro!<br><i class="fa fa-trash"></i></h1>
+        <p>"<strong class="ajusteAlerta">{{ productoAEliminar?.nombre }}</strong>"</p>
+        <div class="modal-buttons">
+            <button class="botonCancelar" (click)="cancelarEliminacion()">Cancelar <i class="fa fa-ban"></i></button>
+            <button class="botonConfirmar" (click)="eliminarConfirmado()">Confirmar <i class="fa fa-trash"></i></button>
+        </div>
+    </div>
+</div>
+<div class="copyright">
+    &copy; 2025 <span id="year"></span> Banco Pichincha. Todos los derechos reservados.
+  </div>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+  

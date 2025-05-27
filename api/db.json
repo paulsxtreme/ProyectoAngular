@@ -1,0 +1,20 @@
+{
+  "products": [
+    {
+      "id": "124",
+      "nombre": "Carlos Sanchez",
+      "description": "hola buenos dias",
+      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSRpntShEqxlr_8A0jNLeeqc29kxKd9F_prA&s",
+      "fechaLib": "2025-05-28",
+      "fechaRev": "2026-05-28"
+    },
+    {
+      "id": "123",
+      "nombre": "Paul Salazar",
+      "description": "hola buenas tardes",
+      "logo": "https://citec.com.ec/wp-content/uploads/2023/10/visa.jpeg",
+      "fechaLib": "2025-05-28",
+      "fechaRev": "2026-05-28"
+    }
+  ]
+}

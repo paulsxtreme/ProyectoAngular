@@ -1,0 +1,352 @@
+.ajusteAlerta{
+word-break: break-word;
+}
+h1{
+  color: rgb(19, 16, 16);
+  font-size: 25px;
+    
+}
+
+/* Contenedor box*/
+.outer-container {
+  background-color: #9b9b9b38;
+  padding: 30px;
+  border-radius: 1px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+  max-width: 80%;
+  margin: -40px auto;
+  box-sizing: border-box;
+}
+
+/* segundo contenedor para barra de busqueda y botón Agregar */
+.segundoContenedor {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  max-width: 95%;
+  margin: 0 auto 10px auto;
+  box-sizing: border-box;
+}
+@media (max-width: 600px) {
+  .segundoContenedor{ 
+    position: relative;
+  flex-direction: column;
+  display: flex;
+    }
+  }
+
+/* Buscador */
+.search-bar {
+  margin: 0;
+  width: auto;
+}
+
+.search-bar input {
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 250px;
+}
+
+/* div de las tablas */
+.tablaContenedor {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 2px;
+  width: 90%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0);
+  overflow-x: auto;
+  max-width: 90%;
+  font-weight: 400;
+  margin: 20px auto;
+}
+
+/* estilos de la tabla */
+table {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  box-shadow: 0 4px 12px rgba(247, 247, 247, 0.61);
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #ffffff;
+  text-align: left;
+  font-size: 15px;
+  border-collapse: collapse;
+}
+
+/* titulos de la tabla  */
+th {
+  background-color: #ffffff8f;
+  color: rgb(0, 0, 0);
+  padding: 15px;
+  font-weight: 500;
+  text-align: left;
+  border-bottom: 1px solid #d8d8d8;
+  font-size: 15px;
+
+}
+
+/* tablas hijas */
+td {
+  padding: 12px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e6e6e6;
+  font-size: 15px;
+  
+  
+  
+}
+td, th .adaptable{
+  word-break: break-word;
+}
+
+/* hover de las filas */
+tr:hover td {
+  background-color: #f9f9f9;
+}
+
+/* BOTONES EDITAR Y ELIMINAR */
+.botonEditar,
+.botonEliminar {
+  margin-right: 10px;
+}
+
+.botonEditar {
+  padding: 10px 18px;
+  background-color: #09003d;
+  border: none;
+  border-radius: 0px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.botonEditar:hover {
+  background-color: #000041ad;
+}
+
+.botonEliminar {
+  padding: 10px 18px;
+  background-color: #ffee00;
+  border: none;
+  border-radius: 4px;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.botonEliminar:hover {
+  background-color: #fffb00ad;
+}
+
+/* SELECTOR DE PÁGINA */
+.page-size {
+  margin-top: 15px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  font-family: inherit;
+}
+
+.page-size select {
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* Boton agregar */
+.botonAgregar {
+  display: inline-block;
+  background-color: #f7f30c;
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: 500;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.botonAgregar:hover {
+  background-color: #e4e00ce1;
+}
+
+/* Acciones para editar y eliminar */
+.opciones-container {
+  position: relative;
+  display: inline-block;
+}
+
+.btn-opciones {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.btn-opciones:hover {
+  background-color: #e0e0e0;
+}
+
+
+
+/* MODAL */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  padding: 24px;
+  border-radius: 8px;
+  text-align: center;
+  width: 350px;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.modal-buttons {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  
+}
+/*BOTONES DE ALERTAS*/
+.botonCancelar {
+  background: #ccc;
+}
+
+.botonConfirmar {
+  background-color: #f7f30c;
+  color: rgb(0, 0, 0);
+  
+}
+
+.botonCancelar,
+.botonConfirmar {
+  color: #09003d;
+  font-size: 13px;
+  padding: 15px 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.contenedor-tabla {
+  overflow: auto; /* Permite que se muestre una barra de desplazamiento cuando sea necesario */
+  width: 80%; /* Ajusta el ancho según tus necesidades */
+  height: 400px; /* Ajusta la altura según tus necesidades */
+}
+ /* LISTA DESPEGABLE TRES PUNTOS HORIZONTALES */
+
+ .dropdown{
+
+  position: relative;
+
+  display: flex;
+  
+
+
+
+}
+
+.dropdown-toggle{
+
+  background:fixed;
+
+  border: none;
+
+  font-size: 30px;
+
+  cursor: pointer;
+
+}
+
+
+
+.dropdown-menu{
+
+   display: none;
+
+  position: absolute;
+
+  right: 0;
+
+  background-color: white;
+
+  min-width: 120px;
+
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+  z-index: 1;
+
+  border-radius: 4px;
+
+
+}
+
+.dropdown:hover .dropdown-menu{
+
+  display: block;
+
+}
+
+.dropdown-menu button{
+
+  width: 100%;
+
+  padding: 8px 12px;
+
+  text-align: left;
+
+  background-color: transparent;
+
+  border: none;
+
+  cursor: pointer;
+
+  display: block;
+
+}
+
+.dropdown-menu button:hover{
+
+  background-color: #e4e00ce1;
+
+}
+.copyright {
+    text-align: center; /* Centro el texto */
+    font-style: italic; /* Estilo de letra inclinado */
+    color: #666; /* Color gris claro */
+    padding: 100px; /* Espacio alrededor del texto */
+    font-size: 14px; /* Tamaño de fuente pequeño */
+    margin: 0; /* Eliminar margen predeterminado */
+}
+
+
+
+
+
+

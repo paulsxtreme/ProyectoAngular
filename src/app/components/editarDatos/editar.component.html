@@ -1,0 +1,111 @@
+
+<div class="principal">
+    <div class="form">
+        <a href="http://localhost:4200/"><span class="material-symbols-outlined">
+        undo
+        </span></a>
+        <h2>Editar Registro</h2>
+        <form (ngSubmit)="validarFormulario()">
+            <div class="edit-form">
+                <div>
+                    <label for="id">Id</label>
+                    <input 
+                        [(ngModel)]="product.id" 
+                        type="text"
+                        name="id" 
+                        id="id"
+                        required minlength="3" 
+                        maxlength="10" 
+                        readonly
+                    />
+                    <div *ngIf="showErrors && (product.id.length < 3 || product.id.length > 10)" style="color:red;">
+                        El id debe tener entre 3 y 10 caracteres.
+                    </div>
+                </div>   
+                
+                <div>
+                    <label for="nombre">Nombre</label>
+                    <input 
+                        [(ngModel)]="product.nombre" 
+                        type="text"
+                        name="nombre" 
+                        id="nombre"
+                        required minlength="5" 
+                        maxlength="100" 
+                    />
+                    <div *ngIf="showErrors && (product.nombre.length < 5 || product.nombre.length > 100)" style="color:red;">
+                        El nombre debe tener entre 5 y 100 caracteres.
+                    </div>
+                </div>  
+
+                <div>
+                    <label for="description">Descripción</label>
+                    <textarea 
+                        [(ngModel)]="product.description" 
+                        type="text"
+                        name="description" 
+                        id="description"
+                        required minlength="10" 
+                        maxlength="200">
+                    </textarea>
+                    <div *ngIf="showErrors && (product.description.length < 10 || product.description.length > 200)" style="color:red;">
+                        La descripción debe tener entre 10 y 200 caracteres.
+                    </div>
+                </div>
+
+                <div>
+                    <label for="logo">Logo url</label>
+                    <input 
+                        [(ngModel)]="product.logo" 
+                        type="text"
+                        id="logo"
+                        name="logo"
+                        id="logo"            
+                        name="logo" 
+                        required 
+                    />
+                    <div *ngIf="showErrors && !product.logo" style="color:red;">
+                        Necesita agregar el logo.
+                    </div>
+                </div>
+
+                <div>
+                    <label for="fechaLib">Fecha de Liberación</label>
+                    <input 
+                        type="date"
+                        id="fechaLib"
+                        name="fechaLib"
+                        [(ngModel)]="product.fechaLib" 
+                        name="fechaLib"                         
+                        required 
+                    />
+                    <div *ngIf="showErrors && !validacionFechaLiberacion" style="color:red;">
+                        La fecha de liberación debe ser igual o posterior a hoy.
+                    </div>
+                </div>
+
+                <div>
+                    <label for="fechaRev">Fecha de Revisión</label>
+                    <input 
+                        [(ngModel)]="product.fechaRev" 
+                        name="fechaRev" 
+                        type="date" 
+                        required />
+                    <div *ngIf="showErrors && !validacionFechaRevision" style="color:red;">
+                        La fecha de revisión debe ser exactamente un año después de la fecha de liberación.
+                    </div>
+                </div>                
+            </div>     
+            <div class="formEdit-a">
+                <button type="submit"  class="reset-btn">Guardar</button>
+                <button type="button" (click)="volver()"  class="enviar-btn">Cancelar</button>
+            </div>        
+        </form>        
+    </div>
+</div>
+<div class="copyright">
+  &copy; 2025 <span id="year"></span> Banco Pichincha. Todos los derechos reservados.
+</div>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
