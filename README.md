@@ -91,13 +91,6 @@ cd api
 json-server --watch db.json --port 3012
 ```
 
-## 🔧 Configuración
-
-Asegúrate de configurar correctamente:
-
-- **API_BASE_URL**: URL base de la API de productos financieros
-- **API_ENDPOINTS**: Endpoints específicos para cada operación
-
 
 ## 🧪 Validaciones Implementadas
 
