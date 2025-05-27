@@ -1,4 +1,4 @@
-# Frontend - Productos Financieros Banco Pichincha
+# Frontend y Backend - Productos Financieros Banco Pichincha
 
 Este proyecto es una aplicación frontend desarrollada para la gestión y visualización de productos financieros del Banco Pichincha. La aplicación permite listar, buscar, agregar, editar y eliminar productos financieros a través de una interfaz web moderna y responsive.
 
@@ -86,12 +86,7 @@ npm start
 cd api
 ```
 
-4. Ejecutar api:
-```bash
-cd api
-```
-
-5. levantar api:
+4. levantar api:
 ```bash
 json-server --watch db.json --port 3012
 ```
